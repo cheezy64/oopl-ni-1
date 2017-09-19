@@ -6,9 +6,7 @@ FILES :=                    \
     Coverage1               \
     Coverage2               \
     Coverage3               \
-    IsPrime1                \
-    IsPrime2                \
-    Exceptions
+    IsPrime1
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
