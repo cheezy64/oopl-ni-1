@@ -115,7 +115,6 @@ sync:
     --include "Coverage2.c++"                \
     --include "Coverage3.c++"                \
     --include "IsPrime1.c++"                 \
-    --include "IsPrime2.c++"                 \
     --include "Exceptions.c++"               \
     --exclude "*"                            \
     ../../examples/c++/ examples
