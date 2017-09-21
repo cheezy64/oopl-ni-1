@@ -8,7 +8,8 @@ FILES :=                    \
     Coverage3               \
     IsPrime1                \
     IsPrime2                \
-    Exceptions
+    Exceptions              \
+    Types
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

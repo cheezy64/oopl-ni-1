@@ -117,6 +117,7 @@ sync:
     --include "IsPrime1.c++"                 \
     --include "IsPrime2.c++"                 \
     --include "Exceptions.c++"               \
+    --include "Types.c++"                    \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
