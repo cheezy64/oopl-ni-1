@@ -7,7 +7,8 @@ FILES :=                    \
     Coverage2               \
     Coverage3               \
     IsPrime1                \
-    IsPrime2
+    IsPrime2                \
+    Exceptions
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
@@ -67,13 +68,11 @@ BoostSerialization: BoostSerialization.c++
 	$(CXX) $(GCOVFLAGS) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lboost_serialization
 	-$(CLANG-CHECK) -extra-arg=-std=c++11          $< --
 	-$(CLANG-CHECK) -extra-arg=-std=c++11 -analyze $< --
-	ldd $@
 
 %: %.c++
 	$(CXX) $(GCOVFLAGS) $(CXXFLAGS) $< -o $@ $(LDFLAGS)
 	-$(CLANG-CHECK) -extra-arg=-std=c++11          $< --
 	-$(CLANG-CHECK) -extra-arg=-std=c++11 -analyze $< --
-	ldd $@
 
 %.c++x: %
 	./$<
@@ -83,6 +82,9 @@ all: $(FILES)
 
 clean:
 	rm -f *.bin
+	rm -f *.gcda
+	rm -f *.gcno
+	rm -f *.gcov
 	rm -f *.plist
 	rm -f $(FILES)
 
