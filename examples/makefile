@@ -9,6 +9,8 @@ FILES :=                    \
     IsPrime1                \
     IsPrime2                \
     Exceptions              \
+    StrCmp1                 \
+    StrCmp2                 \
     Types
 
 ifeq ($(shell uname), Darwin)                                           # Apple
