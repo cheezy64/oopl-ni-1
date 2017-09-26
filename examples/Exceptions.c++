@@ -17,9 +17,7 @@ int f (bool b) {
         throw domain_error("abc");
     return 0;}
 
-int main () {
-    cout << "Exceptions.c++" << endl;
-
+void test () {
     try {
         assert(f(false) == 0);
         }
@@ -40,7 +38,10 @@ int main () {
     logic_error& y = x;
     exception&   z = y;
 
-    assert(&x == &z);
+    assert(&x == &z);}
 
+int main () {
+    cout << "Exceptions.c++" << endl;
+    test();
     cout << "Done." << endl;
     return 0;}

@@ -5,4 +5,6 @@
 /*
 exceptions
 types
+
+finish overviewing the types
 */

@@ -7,6 +7,8 @@
 #include <cassert>  // assert
 #include <iostream> // cout, endl
 
+using namespace std;
+
 int cycle_length (int n) {
     assert(n > 0);
     int c = 0;
@@ -19,14 +21,14 @@ int cycle_length (int n) {
     assert(c > 0);
     return c;}
 
-int main () {
-    using namespace std;
-    cout << "Assertions.c++" << endl;
-
+void test () {
     assert(cycle_length( 1) == 1);
     assert(cycle_length( 5) == 6);
-    assert(cycle_length(10) == 7);
+    assert(cycle_length(10) == 7);}
 
+int main () {
+    cout << "Assertions.c++" << endl;
+    test();
     cout << "Done." << endl;
     return 0;}
 

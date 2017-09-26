@@ -16,16 +16,15 @@
 #include <unordered_set> // unordered_set
 #include <vector>        // vector
 
+using namespace std;
+
 template <typename T>
 struct A {
     int    i;
     double d;
     T      x;};
 
-int main () {
-    using namespace std;
-    cout << "Types.c++" << endl;
-
+void test () {
     bool b = true;
     assert(sizeof(b) ==  1);
 
@@ -138,7 +137,10 @@ int main () {
     {
     A< A<int> > x = {2, 3.45, {2, 3.45, 6}};
     assert(sizeof(x) == 40);
-    }
+    }}
 
+int main () {
+    cout << "Types.c++" << endl;
+    test();
     cout << "Done." << endl;
     return 0;}

@@ -19,9 +19,7 @@ bool is_prime (int n) {
             return false;
     return true;}
 
-int main () {
-    cout << "IsPrime.c++" << endl;
-
+void test () {
     assert(!is_prime( 1));
     assert(!is_prime( 2));
     assert( is_prime( 3));
@@ -30,7 +28,10 @@ int main () {
     assert( is_prime( 7));
     assert( is_prime( 9));
     assert(!is_prime(27));
-    assert( is_prime(29));
+    assert( is_prime(29));}
 
+int main () {
+    cout << "IsPrime.c++" << endl;
+    test();
     cout << "Done." << endl;
     return 0;}

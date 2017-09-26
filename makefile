@@ -120,6 +120,10 @@ sync:
     --include "StrCmp1.c++"                  \
     --include "StrCmp2.c++"                  \
     --include "Types.c++"                    \
+    --include "Representations.c++"          \
+    --include "Operators.c++"                \
+    --include "Variables.c++"                \
+    --include "Arguments.c++"                \
     --exclude "*"                            \
     ../../examples/c++/ examples
 

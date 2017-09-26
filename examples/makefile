@@ -11,7 +11,11 @@ FILES :=                    \
     Exceptions              \
     StrCmp1                 \
     StrCmp2                 \
-    Types
+    Types                   \
+    Representations         \
+    Operators               \
+    Variables               \
+    Arguments
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
