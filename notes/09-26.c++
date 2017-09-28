@@ -7,7 +7,7 @@ exceptions
 types
 
 finish overviewing the types
-casting
+castign
 &, *
 */
 
@@ -154,3 +154,7 @@ int* p = &i; // & can only be applied to an l-value
 int  i = 2;
 int& r = &i; // not ok
 int& r = i;  // r and i become permanent aliases of each other
+int& r = 18; // not ok
+
+cout << (&r == &i); // true
+
