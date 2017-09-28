@@ -15,7 +15,8 @@ FILES :=                    \
     Representations         \
     Operators               \
     Variables               \
-    Arguments
+    Arguments               \
+    Consts
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

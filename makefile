@@ -124,6 +124,7 @@ sync:
     --include "Operators.c++"                \
     --include "Variables.c++"                \
     --include "Arguments.c++"                \
+    --include "Consts.c++"                   \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
