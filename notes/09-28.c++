@@ -146,7 +146,7 @@ iterator categories
 * (read only), ++, !=, ==
 
 // output iterator
-* (write only), ++, !=, ==
+* (write only), ++ (loses == and !=)
 
 // forward iterator
 * (read write), ++, !=, ==
