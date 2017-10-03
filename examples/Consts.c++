@@ -63,7 +63,7 @@ int main () {
 //        int* const cp;       // error: uninitialized const 'cp'
 //        int* const cp = &ci; // error: invalid conversion from 'const int*' to 'int*'
           int* const cp = &i;
-//  cp = &i;                   // error: assignment of read-only variable 'cp'
+//  ++cp;                      // error: cannot assign to variable 'cp' with const-qualified type 'int *const'
     ++*cp;
     assert(i == 3);
     assert(ci);
@@ -76,7 +76,7 @@ int main () {
     const int        ci  = 3;
     const int* const cpc = &ci;
     const int* const cqc = &i;
-//  cqc = &ci;                  // error: assignment of read-only variable 'cqc'
+//  ++cqc;                      // error: cannot assign to variable 'cqc' with const-qualified type 'const int *const'
 //  ++*cqc;                     // error: increment of read-only location
     assert(cpc);
     assert(cqc);
