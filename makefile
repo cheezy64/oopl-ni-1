@@ -127,6 +127,7 @@ sync:
     --include "Equal1.c++"                   \
     --include "Equal2.c++"                   \
     --include "Consts.c++"                   \
+    --include "Iterators.c++"                \
     --exclude "*"                            \
     ../../examples/c++/ examples
 

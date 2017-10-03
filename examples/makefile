@@ -18,7 +18,8 @@ FILES :=                    \
     Arguments               \
     Equal1                  \
     Equal2                  \
-    Consts
+    Consts                  \
+    Iterators
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
