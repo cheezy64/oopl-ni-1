@@ -3,6 +3,12 @@
 // -----------
 
 /*
+casts
+references
+higher-order functions
+fill()
+iota()
+accumulate()
 */
 
 int* const a = new int[10];
@@ -48,40 +54,3 @@ f(multiplies);
 
 // use a lambda instead
 f([] (int x, int y) -> int {return x * y;});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
