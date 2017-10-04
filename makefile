@@ -134,8 +134,8 @@ sync:
     --include "Fill2.c++"                    \
     --include "Iota1.c++"                    \
     --include "Iota2.c++"                    \
-    --include "Iterators.c++"                \
-    --include "Iterators.c++"                \
+    --include "Accumulate1.c++"              \
+    --include "Accumulate2.c++"              \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
