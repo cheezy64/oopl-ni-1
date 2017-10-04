@@ -128,6 +128,14 @@ sync:
     --include "Equal2.c++"                   \
     --include "Consts.c++"                   \
     --include "Iterators.c++"                \
+    --include "Factorial1.c++"               \
+    --include "Factorial2.c++"               \
+    --include "Fill1.c++"                    \
+    --include "Fill2.c++"                    \
+    --include "Iota1.c++"                    \
+    --include "Iota2.c++"                    \
+    --include "Iterators.c++"                \
+    --include "Iterators.c++"                \
     --exclude "*"                            \
     ../../examples/c++/ examples
 

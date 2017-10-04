@@ -19,7 +19,15 @@ FILES :=                    \
     Equal1                  \
     Equal2                  \
     Consts                  \
-    Iterators
+    Iterators               \
+    Factorial1              \
+    Factorial2              \
+    Fill1                   \
+    Fill2                   \
+    Iota1                   \
+    Iota2                   \
+    Accumulate1             \
+    Accumulate2
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
