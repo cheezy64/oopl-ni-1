@@ -136,6 +136,11 @@ sync:
     --include "Iota2.c++"                    \
     --include "Accumulate1.c++"              \
     --include "Accumulate2.c++"              \
+    --include "Cache.c++"                    \
+    --include "Returns.c++"                  \
+    --include "Selection.c++"                \
+    --include "Iteration.c++"                \
+    --include "Classes.c++"                  \
     --exclude "*"                            \
     ../../examples/c++/ examples
 

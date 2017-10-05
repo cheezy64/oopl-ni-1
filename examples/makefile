@@ -27,7 +27,12 @@ FILES :=                    \
     Iota1                   \
     Iota2                   \
     Accumulate1             \
-    Accumulate2
+    Accumulate2             \
+    Cache                   \
+    Returns                 \
+    Selection               \
+    Iteration               \
+    Classes
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

@@ -4,7 +4,7 @@
 
 // http://www.cplusplus.com/doc/tutorial/control/
 
-#include <algorithm>    // all_of, copy, fill, reverse, sort
+#include <algorithm>    // copy, fill, reverse, sort
 #include <cassert>      // assert
 #include <forward_list> // forward_list
 #include <iostream>     // cout, endl
