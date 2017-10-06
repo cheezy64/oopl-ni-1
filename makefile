@@ -138,6 +138,12 @@ sync:
     --include "Accumulate2.c++"              \
     --include "Cache.c++"                    \
     --include "Returns.c++"                  \
+    --include "Copy1.c++"                    \
+    --include "Copy2.c++"                    \
+    --include "Transform1.c++"               \
+    --include "Transform2.c++"               \
+    --include "Reverse1.c++"                 \
+    --include "Reverse2.c++"                 \
     --include "Selection.c++"                \
     --include "Iteration.c++"                \
     --include "Classes.c++"                  \
