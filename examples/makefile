@@ -30,6 +30,12 @@ FILES :=                    \
     Accumulate2             \
     Cache                   \
     Returns                 \
+    Copy1                   \
+    Copy2                   \
+    Transform1              \
+    Transform2              \
+    Reverse1                \
+    Reverse2                \
     Selection               \
     Iteration               \
     Classes
