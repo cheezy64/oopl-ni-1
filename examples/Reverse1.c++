@@ -27,24 +27,36 @@ void my_reverse_ri (RI b, RI e) {
 void test () {
     {
     list<int> x = {2, 3, 4};
-    my_reverse_bi(begin(x), end(x));
+    reverse(begin(x), end(x));
     assert(equal(begin(x), end(x), begin({4, 3, 2})));
     }
 
     {
     list<int> x = {2, 3, 4, 5};
-    my_reverse_bi(begin(x), end(x));
+    reverse(begin(x), end(x));
     assert(equal(begin(x), end(x), begin({5, 4, 3, 2})));
     }
 
     {
     list<int> x = {2, 3, 4};
-    reverse(begin(x), end(x));
+    my_reverse_bi(begin(x), end(x));
     assert(equal(begin(x), end(x), begin({4, 3, 2})));
     }
 
     {
     list<int> x = {2, 3, 4, 5};
+    my_reverse_bi(begin(x), end(x));
+    assert(equal(begin(x), end(x), begin({5, 4, 3, 2})));
+    }
+
+    {
+    vector<int> x = {2, 3, 4};
+    reverse(begin(x), end(x));
+    assert(equal(begin(x), end(x), begin({4, 3, 2})));
+    }
+
+    {
+    vector<int> x = {2, 3, 4, 5};
     reverse(begin(x), end(x));
     assert(equal(begin(x), end(x), begin({5, 4, 3, 2})));
     }
@@ -58,18 +70,6 @@ void test () {
     {
     vector<int> x = {2, 3, 4, 5};
     my_reverse_ri(begin(x), end(x));
-    assert(equal(begin(x), end(x), begin({5, 4, 3, 2})));
-    }
-
-    {
-    vector<int> x = {2, 3, 4};
-    reverse(begin(x), end(x));
-    assert(equal(begin(x), end(x), begin({4, 3, 2})));
-    }
-
-    {
-    vector<int> x = {2, 3, 4, 5};
-    reverse(begin(x), end(x));
     assert(equal(begin(x), end(x), begin({5, 4, 3, 2})));
     }}
 
