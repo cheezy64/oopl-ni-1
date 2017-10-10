@@ -147,6 +147,8 @@ sync:
     --include "Selection.c++"                \
     --include "Iteration.c++"                \
     --include "Classes.c++"                  \
+    --include "RangeIterator1.c++"           \
+    --include "RangeIterator2.c++"           \
     --include "Initializations.c++"          \
     --include "InitializerList.c++"          \
     --include "Auto.c++"                     \

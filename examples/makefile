@@ -39,6 +39,8 @@ FILES :=                    \
     Selection               \
     Iteration               \
     Classes                 \
+    RangeIterator1          \
+    RangeIterator2          \
     Initializations         \
     InitializerList         \
     Auto
