@@ -147,6 +147,9 @@ sync:
     --include "Selection.c++"                \
     --include "Iteration.c++"                \
     --include "Classes.c++"                  \
+    --include "Initializations.c++"          \
+    --include "InitializerList.c++"          \
+    --include "Auto.c++"                     \
     --exclude "*"                            \
     ../../examples/c++/ examples
 

@@ -38,7 +38,10 @@ FILES :=                    \
     Reverse2                \
     Selection               \
     Iteration               \
-    Classes
+    Classes                 \
+    Initializations         \
+    InitializerList         \
+    Auto
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
