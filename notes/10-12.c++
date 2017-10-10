@@ -3,4 +3,8 @@
 // -----------
 
 /*
+Range
+initializations
+initializer_list
+auto
 */
