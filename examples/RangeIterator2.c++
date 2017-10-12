@@ -4,18 +4,17 @@
 
 #include <algorithm> // equal
 #include <iterator>  // input_iterator_tag, iterator
+#include <utility>   // !=
 
 #include "gtest/gtest.h"
 
 using namespace std;
+using std::rel_ops::operator!=;
 
 template <typename T>
 class RangeIterator : public iterator<input_iterator_tag, T> {
     friend bool operator == (const RangeIterator& lhs, const RangeIterator& rhs) {
         return (lhs._v == rhs._v);}
-
-    friend bool operator != (const RangeIterator& lhs, const RangeIterator& rhs) {
-        return !(lhs == rhs);}
 
     private:
         T _v;
@@ -46,7 +45,7 @@ TEST(RangeIteratorFixture, test_2) {
     RangeIterator<int> b = 2;
     RangeIterator<int> e = 3;
     ASSERT_NE(b, e);
-    ASSERT_EQ(2, *b);
+    ASSERT_EQ(*b, 2);
     RangeIterator<int>& x = ++b;
     ASSERT_EQ(&x, &b);
     ASSERT_EQ(b, e);}
@@ -55,10 +54,10 @@ TEST(RangeIteratorFixture, test_3) {
     RangeIterator<int> b = 2;
     RangeIterator<int> e = 4;
     ASSERT_NE(b, e);
-    ASSERT_EQ(2, *b);
+    ASSERT_EQ(*b, 2);
     ++b;
     ASSERT_NE(b, e);
-    ASSERT_EQ(3, *b);
+    ASSERT_EQ(*b, 3);
     RangeIterator<int> x = b++;
     ASSERT_NE(&x, &b);
     ASSERT_EQ(b, e);}
