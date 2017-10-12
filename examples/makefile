@@ -43,7 +43,8 @@ FILES :=                    \
     RangeIterator2          \
     Initializations         \
     InitializerList         \
-    Auto
+    Auto                    \
+    Arrays
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
