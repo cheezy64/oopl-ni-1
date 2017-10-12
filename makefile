@@ -149,6 +149,8 @@ sync:
     --include "Classes.c++"                  \
     --include "RangeIterator1.c++"           \
     --include "RangeIterator2.c++"           \
+    --include "Range1.c++"                   \
+    --include "Range2.c++"                   \
     --include "Initializations.c++"          \
     --include "InitializerList.c++"          \
     --include "Auto.c++"                     \
