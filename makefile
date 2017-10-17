@@ -155,6 +155,8 @@ sync:
     --include "InitializerList.c++"          \
     --include "Auto.c++"                     \
     --include "Arrays.c++"                   \
+    --include "Vector1.c++"                  \
+    --include "Vector2.c++"                  \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
