@@ -46,7 +46,8 @@ FILES :=                    \
     Auto                    \
     Arrays                  \
     Vector1                 \
-    Vector2
+    Vector2                 \
+    Move
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

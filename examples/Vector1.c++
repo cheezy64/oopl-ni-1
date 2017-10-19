@@ -4,10 +4,12 @@
 
 // http://en.cppreference.com/w/cpp/container/vector
 
-#include <algorithm> // equal
-#include <cassert>   // assert
-#include <iostream>  // cout, endl
-#include <vector>    // vector
+#include <algorithm>        // copy, equal, fill
+#include <cassert>          // assert
+#include <cstddef>          // ptrdiff_t, size_t
+#include <initializer_list> // initializer_list
+#include <iostream>         // cout, endl
+#include <vector>           // vector
 
 using namespace std;
 

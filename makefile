@@ -157,6 +157,7 @@ sync:
     --include "Arrays.c++"                   \
     --include "Vector1.c++"                  \
     --include "Vector2.c++"                  \
+    --include "Move.c++"                     \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
