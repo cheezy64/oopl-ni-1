@@ -47,6 +47,7 @@ FILES :=                    \
     Arrays                  \
     Vector1                 \
     Vector2                 \
+    FunctionOverloading     \
     Move
 
 ifeq ($(shell uname), Darwin)                                           # Apple
