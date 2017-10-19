@@ -47,6 +47,8 @@ FILES :=                    \
     Arrays                  \
     Vector1                 \
     Vector2                 \
+    Vector3                 \
+    Vector4                 \
     FunctionOverloading     \
     Move
 
