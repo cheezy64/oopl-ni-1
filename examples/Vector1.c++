@@ -4,9 +4,8 @@
 
 // http://en.cppreference.com/w/cpp/container/vector
 
-#include <algorithm>        // copy, equal, fill
+#include <algorithm>        // equal
 #include <cassert>          // assert
-#include <cstddef>          // ptrdiff_t, size_t
 #include <initializer_list> // initializer_list
 #include <iostream>         // cout, endl
 #include <vector>           // vector

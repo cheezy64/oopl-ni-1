@@ -4,8 +4,10 @@
 
 // http://en.cppreference.com/w/cpp/container/vector
 
-#include <algorithm>        // equal
+#include <algorithm>        // copy, equal, fill, swap
+#include <cstddef>          // ptrdiff_t, size_t
 #include <initializer_list> // initializer_list
+#include <utility>          // !=
 #include <vector>           // vector
 
 #include "gtest/gtest.h"
@@ -25,18 +27,18 @@ inline bool operator != (const T& lhs, const T& rhs) {
 } // std;
 */
 
-using std::rel_ops::operator!=;
+using namespace rel_ops;
 
 template <typename T>
 class my_vector {
     friend bool operator == (const my_vector& lhs, const my_vector& rhs) {
-        return (lhs.size() == rhs.size()) && std::equal(lhs.begin(), lhs.end(), rhs.begin());}
+        return (lhs.size() == rhs.size()) && equal(lhs.begin(), lhs.end(), rhs.begin());}
 
     public:
         using value_type      = T;
 
-        using size_type       = std::size_t;
-        using difference_type = std::ptrdiff_t;
+        using size_type       = size_t;
+        using difference_type = ptrdiff_t;
 
         using       pointer   =       value_type*;
         using const_pointer   = const value_type*;
@@ -57,28 +59,29 @@ class my_vector {
         explicit my_vector (size_type s) :
                 _b ((s == 0) ? nullptr : new value_type[s]),
                 _e (_b + s) {
-            std::fill(begin(), end(), value_type());}
+            fill(_b, _e, value_type());}
 
         my_vector (size_type s, const_reference v) :
                 _b ((s == 0) ? nullptr : new value_type[s]),
                 _e (_b + s) {
-            std::fill(begin(), end(), v);}
+            fill(_b, _e, v);}
 
-        my_vector (std::initializer_list<value_type> rhs) :
+        my_vector (initializer_list<value_type> rhs) :
                 _b ((rhs.size() == 0) ? nullptr : new value_type[rhs.size()]),
                 _e (_b + rhs.size()) {
-            std::copy(rhs.begin(), rhs.end(), begin());}
+            copy(rhs.begin(), rhs.end(), _b);}
 
         my_vector (const my_vector& rhs) :
                 _b ((rhs.size() == 0) ? nullptr : new value_type[rhs.size()]),
                 _e (_b + rhs.size()) {
-            std::copy(rhs.begin(), rhs.end(), begin());}
+            copy(rhs._b, rhs._e, _b);}
 
         my_vector& operator = (const my_vector& rhs) {
             if (this == &rhs)
                 return *this;
             my_vector that(rhs);
-            swap(that);
+            swap(_b, that._b);
+            swap(_e, that._e);
             return *this;}
 
         ~my_vector () {
@@ -103,11 +106,7 @@ class my_vector {
             return const_cast<my_vector*>(this)->end();}
 
         size_type size () const {
-            return end() - begin();}
-
-        void swap (my_vector& rhs) {
-            std::swap(_b, rhs._b);
-            std::swap(_e, rhs._e);}};
+            return _e - _b;}};
 
 template <typename T>
 struct VectorFixture : Test {
@@ -135,9 +134,7 @@ TYPED_TEST(VectorFixture, test_2) {
     ASSERT_TRUE(equal(begin(x), end(x), begin({0, 0, 0})));
     ASSERT_EQ(0, x[1]);
     x[1] = 2;
-    ASSERT_TRUE(equal(begin(x), end(x), begin({0, 2, 0})));
-    fill(begin(x), end(x), 4);
-    ASSERT_TRUE(equal(begin(x), end(x), begin({4, 4, 4})));}
+    ASSERT_TRUE(equal(begin(x), end(x), begin({0, 2, 0})));}
 
 TYPED_TEST(VectorFixture, test_3) {
     using vector_type = typename TestFixture::vector_type;
@@ -153,7 +150,7 @@ TYPED_TEST(VectorFixture, test_3) {
 TYPED_TEST(VectorFixture, test_4) {
     using vector_type = typename TestFixture::vector_type;
 
-    const vector_type x{2, 3, 4};
+    const vector_type x = {2, 3, 4};
     ASSERT_EQ(3, x.size());
     ASSERT_TRUE(equal(begin(x), end(x), begin({2, 3, 4})));}
 

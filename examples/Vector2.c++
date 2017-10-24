@@ -41,17 +41,17 @@ class my_vector {
         explicit my_vector (size_type s) :
                 _b ((s == 0) ? nullptr : new value_type[s]),
                 _e (_b + s) {
-            fill(begin(), end(), value_type());}
+            fill(_b, _e, value_type());}
 
         my_vector (size_type s, const_reference v) :
                 _b ((s == 0) ? nullptr : new value_type[s]),
                 _e (_b + s) {
-            fill(begin(), end(), v);}
+            fill(_b, _e, v);}
 
         my_vector (initializer_list<value_type> rhs) :
                 _b ((rhs.size() == 0) ? nullptr : new value_type[rhs.size()]),
                 _e (_b + rhs.size()) {
-            copy(rhs.begin(), rhs.end(), begin());}
+            copy(rhs.begin(), rhs.end(), _b);}
 
         my_vector             (const my_vector&)  = delete;
         my_vector& operator = (const my_vector&)  = delete;
@@ -60,7 +60,7 @@ class my_vector {
             delete [] _b;}
 
         reference operator [] (size_type i) {
-            return begin()[i];}
+            return _b[i];}
 
         const_reference operator [] (size_type i) const {
             return (*const_cast<my_vector*>(this))[i];}
@@ -78,7 +78,7 @@ class my_vector {
             return const_cast<my_vector*>(this)->end();}
 
         size_type size () const {
-            return end() - begin();}};
+            return _e - _b;}};
 
 template <typename T>
 struct VectorFixture : Test {
