@@ -161,6 +161,8 @@ sync:
     --include "Vector4.c++"                  \
     --include "FunctionOverloading.c++"      \
     --include "Move.c++"                     \
+    --include "Vector5.c++"                  \
+    --include "Vector6.c++"                  \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
