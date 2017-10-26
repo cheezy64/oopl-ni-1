@@ -94,6 +94,9 @@ operator delete(a)
 
 template <typename T>
 class Allocator {
+    bool operator == (const Allocator& lhs, const Allocator& rhs) {
+        return true;}
+
     public:
         T* allocate (int s) {
             return static_cast<T*>(operator new(s * sizeof(T)));}

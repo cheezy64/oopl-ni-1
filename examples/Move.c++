@@ -89,55 +89,37 @@ C<int> g () {
 
 int main() {
     {
-    cout << "1. ctor: ";
-    B<int> x;             // 1. ctor: A() B()
-    cout << endl;
-
-    {
-    cout << "2. copy: ";
-    B<int> y = f();       // 2. copy: A() B() ~B() ~A()
+    cout << "1. copy: ";
+    B<int> x = f();      // 1. copy: A() B()
     }
     cout << endl;
 
-    cout << "3. copy: ";
-    x = f();              // 3. copy: A() B() =(const A&) =(const B&) ~B() ~A()
-    cout << endl;
-
-    cout << "4. dtor: ";
-    }                     // 4. dtor: ~B() ~A()
+    {
+    cout << "2. asgn: ";
+    B<int> x;
+    x = f();             // 2. asgn: A() B() =(const A&) =(const B&)
+    }
     cout << endl << endl;
 
-
-
     {
-    cout << "1. ctor: ";
-    C<int> x;            // 1. ctor: A() C()
-    cout << endl;
-
-    {
-    cout << "2. copy: ";
-    C<int> y = g();      // 2. ctor: A() C() ~C() ~A()
+    cout << "1. copy: ";
+    C<int> x = g();      // 1. copy: A() C()
     }
     cout << endl;
 
-    cout << "3. move: ";
-    x = g();             // 3. copy: A() C() =(A&&) =(C&&) ~C() ~A()
-    cout << endl;
-
-    cout << "4. dtor: ";
-    }                    // 4. dtor: ~C() ~A()
+    {
+    cout << "2. asgn: ";
+    C<int> x;
+    x = g();             // 2. asgn: A() C() =(A&&) =(C&&)
+    }
     cout << endl;
 
     return 0;}
 
 /*
-1. ctor: A() B()
-2. copy: A() B() ~B() ~A()
-3. copy: A() B() =(const A&) =(const B&) ~B() ~A()
-4. dtor: ~B() ~A()
+1. copy: A() B() ~B() ~A()
+2. asgn: A() B() A() B() =(const A&) =(const B&) ~B() ~A() ~B() ~A()
 
-1. ctor: A() C()
-2. copy: A() C() ~C() ~A()
-3. move: A() C() =(A&&) =(C&&) ~C() ~A()
-4. dtor: ~C() ~A()
+1. copy: A() C() ~C() ~A()
+2. asgn: A() C() A() C() =(A&&) =(C&&) ~C() ~A() ~C() ~A()
 */

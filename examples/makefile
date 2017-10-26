@@ -49,10 +49,13 @@ FILES :=                    \
     Vector2                 \
     Vector3                 \
     Vector4                 \
+    FunctionOverloading     \
+    Move                    \
     Vector5                 \
     Vector6                 \
-    FunctionOverloading     \
-    Move
+    FunctionDefaults        \
+    Vector7                 \
+    Vector8
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
