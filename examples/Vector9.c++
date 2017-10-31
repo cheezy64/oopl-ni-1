@@ -255,8 +255,8 @@ TYPED_TEST(Vector_Fixture, test_1) {
 
     const vector_type x;
     ASSERT_TRUE(x.empty());
-    ASSERT_EQ(0, x.size());
-    ASSERT_EQ(0, x.capacity());}
+    ASSERT_EQ(x.size(),     0);
+    ASSERT_EQ(x.capacity(), 0);}
 
 TYPED_TEST(Vector_Fixture, test_2) {
     using vector_type = typename TestFixture::vector_type;
@@ -264,54 +264,54 @@ TYPED_TEST(Vector_Fixture, test_2) {
 
     vector_type x(10);
     ASSERT_FALSE(x.empty());
-    ASSERT_EQ(10, x.size());
-    ASSERT_EQ(10, x.capacity());
-    ASSERT_EQ(10, count(x.begin(), x.end(), value_type()));}
+    ASSERT_EQ(x.size(),     10);
+    ASSERT_EQ(x.capacity(), 10);
+    ASSERT_EQ(count(x.begin(), x.end(), value_type()), 10);}
 
 TYPED_TEST(Vector_Fixture, test_3) {
     using vector_type = typename TestFixture::vector_type;
 
     const vector_type x(10, 2);
     ASSERT_FALSE(x.empty());
-    ASSERT_EQ(10, x.size());
-    ASSERT_EQ(10, x.capacity());
-    ASSERT_EQ(10, count(x.begin(), x.end(), 2));}
+    ASSERT_EQ(x.size(),     10);
+    ASSERT_EQ(x.capacity(), 10);
+    ASSERT_EQ(count(x.begin(), x.end(), 2), 10);}
 
 TYPED_TEST(Vector_Fixture, test_4) {
     using vector_type = typename TestFixture::vector_type;
 
     vector_type x(10);
-    ASSERT_EQ(10, x.size());
-    ASSERT_EQ(10, x.capacity());
+    ASSERT_EQ(x.size(),     10);
+    ASSERT_EQ(x.capacity(), 10);
     x.reserve(5);
-    ASSERT_EQ(10, x.size());
-    ASSERT_EQ(10, x.capacity());
+    ASSERT_EQ(x.size(),     10);
+    ASSERT_EQ(x.capacity(), 10);
     x.reserve(15);
-    ASSERT_EQ(10, x.size());
-    ASSERT_EQ(15, x.capacity());}
+    ASSERT_EQ(x.size(),     10);
+    ASSERT_EQ(x.capacity(), 15);}
 
 TYPED_TEST(Vector_Fixture, test_5) {
     using vector_type = typename TestFixture::vector_type;
 
     vector_type x(10);
-    ASSERT_EQ(10, x.size());
-    ASSERT_EQ(10, x.capacity());
+    ASSERT_EQ(x.size(),     10);
+    ASSERT_EQ(x.capacity(), 10);
     x.resize(5);
-    ASSERT_EQ(5, x.size());
-    ASSERT_EQ(10, x.capacity());
+    ASSERT_EQ(x.size(),      5);
+    ASSERT_EQ(x.capacity(), 10);
     x.resize(8);
-    ASSERT_EQ(8, x.size());
-    ASSERT_EQ(10, x.capacity());
+    ASSERT_EQ(x.size(),      8);
+    ASSERT_EQ(x.capacity(), 10);
     x.resize(15);
-    ASSERT_EQ(15, x.size());
+    ASSERT_EQ(x.size(),     15);
     #ifdef __APPLE__
-    ASSERT_EQ(20, x.capacity());
+    ASSERT_EQ(x.capacity(), 20);
     #else
-    ASSERT_EQ(16, x.capacity());
+    ASSERT_EQ(x.capacity(), 16);
     #endif
     x.resize(50);
-    ASSERT_EQ(50, x.size());
-    ASSERT_EQ(50, x.capacity());}
+    ASSERT_EQ(x.size(),     50);
+    ASSERT_EQ(x.capacity(), 50);}
 
 TYPED_TEST(Vector_Fixture, test_6) {
     using vector_type = typename TestFixture::vector_type;
@@ -320,10 +320,10 @@ TYPED_TEST(Vector_Fixture, test_6) {
     x[0] = 2;
     x[1] = 3;
     x[2] = 4;
-    ASSERT_EQ(3, x[ 1]);
-//  ASSERT_EQ(3, x[10]);
+    ASSERT_EQ(x[ 1], 3);
+//  ASSERT_EQ(x[10], 3);
     try {
-        ASSERT_EQ(3, x.at(10));
+        ASSERT_EQ(x.at(10), 3);
         ASSERT_TRUE(false);}
     catch (const out_of_range&)
         {}}
@@ -337,11 +337,11 @@ TYPED_TEST(Vector_Fixture, test_7) {
     x.push_back(4);
     x.push_back(2);
     x.push_back(3);
-    ASSERT_EQ(5, x.size());
-    ASSERT_EQ(8, x.capacity());
+    ASSERT_EQ(x.size(),     5);
+    ASSERT_EQ(x.capacity(), 8);
     x.pop_back();
-    ASSERT_EQ(4, x.size());
-    ASSERT_EQ(8, x.capacity());}
+    ASSERT_EQ(x.size(),     4);
+    ASSERT_EQ(x.capacity(), 8);}
 
 TYPED_TEST(Vector_Fixture, test_8) {
     using vector_type = typename TestFixture::vector_type;
@@ -350,51 +350,51 @@ TYPED_TEST(Vector_Fixture, test_8) {
     x.push_back(2);
     x.push_back(3);
     x.push_back(4);
-    ASSERT_EQ(3, x.size());
-    ASSERT_EQ(4, x.capacity());
+    ASSERT_EQ(x.size(),     3);
+    ASSERT_EQ(x.capacity(), 4);
     const vector_type y(x);
-    ASSERT_EQ(3, y.size());
-    ASSERT_EQ(3, y.capacity());
-    ASSERT_EQ(y, x);}
+    ASSERT_EQ(y.size(),     3);
+    ASSERT_EQ(y.capacity(), 3);
+    ASSERT_EQ(x, y);}
 
 TYPED_TEST(Vector_Fixture, test_9) {
     using vector_type = typename TestFixture::vector_type;
 
     const vector_type x(10, 2);
     vector_type       y(20, 3);
-    ASSERT_EQ(20, y.size());
-    ASSERT_EQ(20, y.capacity());
+    ASSERT_EQ(y.size(),     20);
+    ASSERT_EQ(y.capacity(), 20);
     ASSERT_TRUE(x != y);
     y = x;
-    ASSERT_EQ(10, y.size());
-    ASSERT_EQ(20, y.capacity());
-    ASSERT_EQ(y, x);}
+    ASSERT_EQ(y.size(),     10);
+    ASSERT_EQ(y.capacity(), 20);
+    ASSERT_EQ(x, y);}
 
 TYPED_TEST(Vector_Fixture, test_10) {
     using vector_type = typename TestFixture::vector_type;
 
     const vector_type x(15, 2);
     vector_type       y(10, 3);
-    ASSERT_EQ(10, y.size());
-    ASSERT_EQ(10, y.capacity());
+    ASSERT_EQ(y.size(),     10);
+    ASSERT_EQ(y.capacity(), 10);
     y.push_back(3);
-    ASSERT_EQ(11, y.size());
-    ASSERT_EQ(20, y.capacity());
+    ASSERT_EQ(y.size(),     11);
+    ASSERT_EQ(y.capacity(), 20);
     ASSERT_TRUE(x != y);
     y = x;
-    ASSERT_EQ(15, y.size());
-    ASSERT_EQ(20, y.capacity());
-    ASSERT_EQ(y, x);}
+    ASSERT_EQ(y.size(),     15);
+    ASSERT_EQ(y.capacity(), 20);
+    ASSERT_EQ(x, y);}
 
 TYPED_TEST(Vector_Fixture, test_11) {
     using vector_type = typename TestFixture::vector_type;
 
     const vector_type x(20, 2);
     vector_type       y(10, 3);
-    ASSERT_EQ(10, y.size());
-    ASSERT_EQ(10, y.capacity());
+    ASSERT_EQ(y.size(),     10);
+    ASSERT_EQ(y.capacity(), 10);
     ASSERT_TRUE(x != y);
     y = x;
-    ASSERT_EQ(20, y.size());
-    ASSERT_EQ(20, y.capacity());
-    ASSERT_EQ(y, x);}
+    ASSERT_EQ(y.size(),     20);
+    ASSERT_EQ(y.capacity(), 20);
+    ASSERT_EQ(x, y);}
