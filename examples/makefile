@@ -55,7 +55,10 @@ FILES :=                    \
     Vector6                 \
     FunctionDefaults        \
     Vector7                 \
-    Vector8
+    Vector8                 \
+    Vector9                 \
+    Shapes1                 \
+    Shapes2
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

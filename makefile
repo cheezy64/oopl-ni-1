@@ -167,6 +167,9 @@ sync:
     --include "Memory.h"                     \
     --include "Vector7.c++"                  \
     --include "Vector8.c++"                  \
+    --include "Vector9.c++"                  \
+    --include "Shapes1.c++"                  \
+    --include "Shapes2.c++"                  \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
