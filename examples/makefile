@@ -58,7 +58,10 @@ FILES :=                    \
     Vector8                 \
     Vector9                 \
     Shapes1                 \
-    Shapes2
+    Shapes2                 \
+    MethodOverriding1       \
+    Shapes3                 \
+    Shapes4
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++
