@@ -106,7 +106,7 @@ void test () {
     Shape x(2, 3);
     x.move(4, 5);
     assert(x.area() == 0);
-//  x.radius();               // doesn't compile
+//  x.radius();            // doesn't compile
     }
 
     {
@@ -120,7 +120,7 @@ void test () {
     {
     Circle x(2, 3, 4);
     x.move(5, 6);
-    assert(x.area() == 3.14 * 4 * 4);
+    assert(x.area()   == 3.14 * 4 * 4);
     assert(x.radius() == 4);
     }
 
@@ -140,7 +140,7 @@ void test () {
 //  p->radius();                               // doesn't compile
 //  delete p;                                  // illdefined
     Circle* const q = static_cast<Circle*>(p);
-    assert(q->area() == 3.14 * 4 * 4);
+    assert(q->area()   == 3.14 * 4 * 4);
     assert(q->radius() == 4);
     delete q;
     }
@@ -150,7 +150,7 @@ void test () {
           Shape* const q = new Circle(2, 3, 5);
 //  assert(*p != *q);                                      // illdefined
 //  *q = *p;                                               // illdefined
-//  assert(*q == *p);                                      // illdefined
+//  assert(*p == *q);                                      // illdefined
 //  delete p;                                              // illdefined
 //  delete q;                                              // illdefined
     const Circle* const r = static_cast<const Circle*>(p);

@@ -106,7 +106,7 @@ TEST(ShapeFixture, test_1) {
     Shape x(2, 3);
     x.move(4, 5);
     ASSERT_EQ(x.area(), 0);
-//  x.radius();               // doesn't compile
+//  x.radius();             // doesn't compile
     }
 
 TEST(ShapeFixture, test_2) {
@@ -119,7 +119,7 @@ TEST(ShapeFixture, test_2) {
 TEST(ShapeFixture, test_3) {
     Circle x(2, 3, 4);
     x.move(5, 6);
-    ASSERT_EQ(x.area(), 3.14 * 4 * 4);
+    ASSERT_EQ(x.area(),   3.14 * 4 * 4);
     ASSERT_EQ(x.radius(), 4);}
 
 TEST(ShapeFixture, test_4) {
@@ -137,7 +137,7 @@ TEST(ShapeFixture, test_5) {
 //  p->radius();                               // doesn't compile
 //  delete p;                                  // illdefined
     Circle* const q = static_cast<Circle*>(p);
-    ASSERT_EQ(q->area(), 3.14 * 4 * 4);
+    ASSERT_EQ(q->area(),   3.14 * 4 * 4);
     ASSERT_EQ(q->radius(), 4);
     delete q;}
 
