@@ -27,7 +27,6 @@ struct B : A {
         return "B::h";}};
 
 struct C : A {
-    using A::f;
     using A::g;
     using A::h;
 
