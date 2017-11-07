@@ -174,6 +174,8 @@ sync:
     --include "Shapes3.c++"                  \
     --include "Shapes4.c++"                  \
     --include "MethodOverriding2.c++"        \
+    --include "Shapes5.c++"                  \
+    --include "Shapes6.c++"                  \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
