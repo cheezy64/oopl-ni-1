@@ -49,7 +49,7 @@ struct A {
 
 struct B : A {
     using A::g;
-    usint A::h;
+    using A::h;
 
     void f (int) {...}
 
