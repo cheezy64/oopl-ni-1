@@ -31,7 +31,7 @@ void test () {
     assert( is_prime(29));}
 
 int main () {
-    cout << "IsPrime.c++" << endl;
+    cout << "IsPrime1.c++" << endl;
     test();
     cout << "Done." << endl;
     return 0;}
