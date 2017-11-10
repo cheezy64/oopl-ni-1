@@ -5,6 +5,7 @@
 #include <algorithm> // swap
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
+#include <typeinfo>  // bad_cast
 #include <utility>   // !=
 
 using namespace std;
@@ -158,7 +159,7 @@ void test () {
     try {
         const Circle& r = dynamic_cast<const Circle&>(x.operator*());
         assert(r.radius() == 4);}
-    catch (bad_cast& e) {
+    catch (const bad_cast& e) {
         assert(false);}
     }
 
@@ -173,7 +174,7 @@ void test () {
     try {
         const Circle& r = dynamic_cast<const Circle&>(x.operator*());
         assert(r.radius() == 4);}
-    catch (bad_cast& e) {
+    catch (const bad_cast& e) {
         assert(false);}
     }
 
