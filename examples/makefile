@@ -62,7 +62,13 @@ FILES :=                    \
     MethodOverriding1       \
     Shapes3                 \
     Shapes4                 \
-    MethodOverriding2
+    MethodOverriding2       \
+    Handle1                 \
+    Handle2                 \
+    Handle3                 \
+    Handle4                 \
+    Handle5                 \
+    Handle6
 
 ifeq ($(shell uname), Darwin)                                           # Apple
     CXX          := g++

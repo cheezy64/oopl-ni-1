@@ -176,6 +176,12 @@ sync:
     --include "MethodOverriding2.c++"        \
     --include "Shapes5.c++"                  \
     --include "Shapes6.c++"                  \
+    --include "Handle1.c++"                  \
+    --include "Handle2.c++"                  \
+    --include "Handle3.c++"                  \
+    --include "Handle4.c++"                  \
+    --include "Handle5.c++"                  \
+    --include "Handle6.c++"                  \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
