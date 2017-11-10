@@ -4,6 +4,8 @@
 
 // https://en.wikipedia.org/wiki/Primality_test
 
+#include <cmath> // sqrt
+
 #include "gtest/gtest.h"
 
 using namespace std;
@@ -14,7 +16,7 @@ bool is_prime (int n) {
         return true;
     if ((n == 1) || ((n % 2) == 0))
         return false;
-    for (int i = 3; (i * i) <= n; ++++i)
+    for (int i = 3; i < (std::sqrt(n) + 1); ++++i)
         if ((n % i) == 0)
             return false;
     return true;}

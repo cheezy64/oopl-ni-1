@@ -158,7 +158,7 @@ void test () {
     try {
         const Circle& r = dynamic_cast<const Circle&>(x.operator*());
         assert(r.radius() == 4);}
-    catch (const bad_cast& e) {
+    catch (bad_cast& e) {
         assert(false);}
     }
 
@@ -173,7 +173,7 @@ void test () {
     try {
         const Circle& r = dynamic_cast<const Circle&>(x.operator*());
         assert(r.radius() == 4);}
-    catch (const bad_cast& e) {
+    catch (bad_cast& e) {
         assert(false);}
     }
 
